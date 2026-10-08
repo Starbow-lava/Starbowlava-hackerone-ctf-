@@ -1,1 +1,5 @@
 difficulty:easy
+skills:web
+
+For this one i started by creating a new page and seeing what i could do. The box may allow for sql and xss attacks, i also note that it starts me on page 11, so im going to take a look at the other previous pages by using the url. working backwards I find that none work except for page 5 which is forbidden. so its off to burp proxy to see what i can do. since access if forbidden i wonder if i can use a different https method to get it working. downgrading to http doesnt seem to work so i change it to a post method rather than get. This does not work -_- so i move to another url method. I put the url as page/edit/5 and this works and i get my first flag. 
+One down 3 to go
