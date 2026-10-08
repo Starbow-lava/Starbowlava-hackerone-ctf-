@@ -1,5 +1,13 @@
 difficulty:easy
 skills:web
+tools used; inspect, payloadplayground.com, inspect.
 
 For this one i started by creating a new page and seeing what i could do. The box may allow for sql and xss attacks, i also note that it starts me on page 11, so im going to take a look at the other previous pages by using the url. working backwards I find that none work except for page 5 which is forbidden. so its off to burp proxy to see what i can do. since access if forbidden i wonder if i can use a different https method to get it working. downgrading to http doesnt seem to work so i change it to a post method rather than get. This does not work -_- so i move to another url method. I put the url as page/edit/5 and this works and i get my first flag. 
 One down 3 to go
+using payloadplayground.com i find some xss and sql injections and start to test them out. using the first payload for xss (<script>alert(1)</script>) I put it in both the title and content boxes and nothing happens. so i click to go home and i get a popup for the next flag. 
+2/4  onto the next 
+I figured since there was a xss attack flag there would be a sql injection one to. unfortunately since sql needs a input box  or url it was back to the url method. nothing broke on adding a apostrophe or 2, thinking a bit i added edit to a page and the apostrophe and that somehow worked. 
+3/4
+this last one had me digging through the old pages and i saw a button script, despite the text at the bottom of the page saying no scripts, i put another xss script(<body onload=alert(1)>) in and it gave me a popup just saying 1. If im able to get it to say 1 from that i wonder if i can get that flag. using inspect gives us the flag.
+
+
